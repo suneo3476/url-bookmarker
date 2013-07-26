@@ -9,7 +9,6 @@ gem 'dm-sqlite-adapter'
 gem 'sqlite3'
 gem 'sanitize'
 
-
 group :development do
   gem 'sinatra-contrib'
 end

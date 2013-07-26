@@ -1,15 +1,20 @@
+require 'rubygems'
+require 'sinatra'
+require 'dm-core'
+require 'dm-migrations'
+
 if development?
 	require 'sinatra/reloader'
 end
 
-DataMapper.setup(:default, 'sqlite3://db/diptych.db')
+DataMapper.setup(:default, 'sqlite3:db/diptych.db')
 class Entries
 	include DataMapper::Resource
 	property :id, Serial
 	property :url, String
 	property :created_at, DateTime
 	property :updated_at, DateTime
-	auto_upgrade!
+	DataMapper.auto_upgrade!
 end
 
 get '/' do
