@@ -1,1 +1,2 @@
+= url bookmarker
 任意のURLを登録します。removeはできません。サニタイジング、URL補完機能あり。
