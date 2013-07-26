@@ -1,7 +1,9 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
-require 'sequel'
+require 'dm-core'
+require 'dm-migrations'
+require 'dm-timestamps'
 require 'sqlite3'
 require 'sanitize'
 

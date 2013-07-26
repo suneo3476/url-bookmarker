@@ -2,20 +2,14 @@ if development?
 	require 'sinatra/reloader'
 end
 
-Sequel::Model.plugin(:schema)
-
-Sequel.sqlite('db/diptych.db')
-class Entries < Sequel::Model
-	plugin :timestamps, :update_on_create => true
-	unless table_exists?
-		set_schema do
-			primary_key :id
-			string :url
-			timestamp :created_at
-			timestamp :updated_at
-		end
-		create_table
-	end
+DataMapper.setup(:default, 'sqlite3://db/diptych.db')
+class Entries
+	include DataMapper::Resource
+	property :id, Serial
+	property :url, String
+	property :created_at, DateTime
+	property :updated_at, DateTime
+	auto_upgrade!
 end
 
 get '/' do
