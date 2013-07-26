@@ -1,2 +1,6 @@
 = url bookmarker
 任意のURLを登録します。removeはできません。サニタイジング、URL補完機能あり。
+
+= how to use
+cloneしたディレクトリで"bundle exec rackup config.ru"を実行すると、
+サーバが起動してlocalhost:9292で呼び出せます。
